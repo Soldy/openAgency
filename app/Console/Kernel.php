@@ -13,7 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        \App\Console\Commands\userAdd::class,
+        \App\Console\Commands\userManager::class,
+        \App\Console\Commands\usersList::class,
     ];
 
     /**
