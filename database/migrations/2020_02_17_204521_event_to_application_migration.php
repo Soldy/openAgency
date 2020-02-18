@@ -18,6 +18,9 @@ class EventToApplicationMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('eventId');
             $table->unsignedBigInteger('applicationId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('eventId')->references('id')->on('events');
             $table->foreign('applicationId')->references('id')->on('applications');
         });

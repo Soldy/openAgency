@@ -23,8 +23,6 @@ class AgenciesMigration extends Migration
             $table->string('address', 200);
             $table->string('city', 70);
             $table->string('postcode', 10);
-            $table->string('phone', 20);
-            $table->string('website', 70);
             $table->text('description')->default(" ");
             $table->timestamps();
             $table->softDeletes();

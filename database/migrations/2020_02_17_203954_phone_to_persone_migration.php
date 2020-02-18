@@ -18,6 +18,9 @@ class PhoneToPersoneMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('phoneId');
             $table->unsignedBigInteger('personId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('phoneId')->references('id')->on('phones');
             $table->foreign('personId')->references('id')->on('persones');
         });

@@ -18,6 +18,9 @@ class ApplicationToPersonMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('applicationId');
             $table->unsignedBigInteger('personId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('applicationId')->references('id')->on('applications');
             $table->foreign('personId')->references('id')->on('persones');
         });

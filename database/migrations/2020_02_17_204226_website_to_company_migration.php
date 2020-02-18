@@ -18,6 +18,9 @@ class WebsiteToCompanyMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('websiteId');
             $table->unsignedBigInteger('companyId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('websiteId')->references('id')->on('websites');
             $table->foreign('companyId')->references('id')->on('companies');
         });

@@ -18,6 +18,9 @@ class ApplicationToAgencyMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('applicationId');
             $table->unsignedBigInteger('agencyId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('applicationId')->references('id')->on('applications');
             $table->foreign('agencyId')->references('id')->on('agencies');
         });

@@ -18,6 +18,9 @@ class ApplicationToCompanyMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('applicationId');
             $table->unsignedBigInteger('companyId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('applicationId')->references('id')->on('applications');
             $table->foreign('companyId')->references('id')->on('companies');
         });

@@ -18,6 +18,9 @@ class WebsiteToAgencyMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('websiteId');
             $table->unsignedBigInteger('agencyId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('websiteId')->references('id')->on('websites');
             $table->foreign('agencyId')->references('id')->on('agencies');
         });

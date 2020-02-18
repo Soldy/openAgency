@@ -18,6 +18,9 @@ class EmailToPersoneMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('emailId');
             $table->unsignedBigInteger('personId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('emailId')->references('id')->on('emails');
             $table->foreign('personId')->references('id')->on('persones');
         });

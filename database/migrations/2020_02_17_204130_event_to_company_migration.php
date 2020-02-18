@@ -18,6 +18,9 @@ class EventToCompanyMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('eventId');
             $table->unsignedBigInteger('companyId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('eventId')->references('id')->on('events');
             $table->foreign('companyId')->references('id')->on('companies');
         });

@@ -18,6 +18,9 @@ class EventToAgencyMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('eventId');
             $table->unsignedBigInteger('agencyId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('eventId')->references('id')->on('events');
             $table->foreign('agencyId')->references('id')->on('agencies');
         });

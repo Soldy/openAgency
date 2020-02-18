@@ -18,6 +18,9 @@ class EventToPersoneMigration extends Migration
         Schema::create($tableName, function (Blueprint $table) {
             $table->unsignedBigInteger('eventId');
             $table->unsignedBigInteger('personId');
+            $table->string('comment');
+            $table->timestamps();
+            $table->softDeletes();
             $table->foreign('eventId')->references('id')->on('events');
             $table->foreign('personId')->references('id')->on('persones');
         });
