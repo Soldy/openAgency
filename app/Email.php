@@ -24,4 +24,13 @@ class Email extends Model
         $email->save();
         return $email->id;
     }
+    public function categories (){
+         $this->belongsToMany('App\Category', 'categoryToEmail', 'categoryId', 'emailId');
+    }
+    public function companys (){
+         $this->belongsToMany('App\Email', 'emailToCompany', 'companyId', 'emailId');
+    }
+    public function persones (){
+         $this->belongsToMany('App\Person', 'emailToPerson', 'personeId', 'emailId');
+    }
 }
