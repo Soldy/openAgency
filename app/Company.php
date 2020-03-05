@@ -26,7 +26,7 @@ class Company extends Model
          $this->belongsToMany('App\Company', 'categoryToCompany', 'categoryId', 'companyId');
     }
     public function emails (){
-         $this->belongsToMany('App\Email', 'emailToCase', 'emailId', 'companyId');
+         $this->belongsToMany('App\Email', 'emailToCompany', 'emailId', 'companyId');
     }
     public function events (){
          $this->belongsToMany('App\Event', 'eventToCompany', 'eventId', 'companyId');
