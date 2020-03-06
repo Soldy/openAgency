@@ -28,7 +28,7 @@ class Email extends Model
          $this->belongsToMany('App\Category', 'categoryToEmail', 'categoryId', 'emailId');
     }
     public function companys (){
-         $this->belongsToMany('App\Email', 'emailToCompany', 'companyId', 'emailId');
+         $this->belongsToMany('App\Company', 'emailToCompany', 'companyId', 'emailId');
     }
     public function persones (){
          $this->belongsToMany('App\Person', 'emailToPerson', 'personeId', 'emailId');
