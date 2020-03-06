@@ -12,7 +12,7 @@ class Category extends Model
     use SoftDeletes;
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    protected $table = 'agencies';
+    protected $table = 'categories';
     protected $primaryKey = 'id';
     public function addresses (){
          $this->belongsToMany('App\Address', 'categoryToAddress', 'addressId', 'categoryId');
