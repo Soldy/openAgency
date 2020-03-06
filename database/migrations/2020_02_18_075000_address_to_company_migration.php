@@ -23,7 +23,7 @@ class AddressToCompanyMigration extends Migration
             $table->softDeletes();
             $table->foreign('addressId')->references('id')->on('addresses');
             $table->foreign('companyId')->references('id')->on('companies');
-              $table->bigIncrements('id')->unsigned();
+            $table->bigIncrements('id')->unsigned();
          });
     }
 
